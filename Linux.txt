@@ -99,6 +99,17 @@ Working With Files   ($ cat [Options] <file1> <file2>   (Example --> $ cat file1
 		the '>>' can be used to append text contents to an existing file from the terminal. 
 	$ cat file1.txt >> file2.txt 
 		the '>>' can be used to append text contents to the existing file file2.txt from the existing file file1.txt.  
+
+
+Working With "grep" command 
+--------------------------------------------------------------------------------------------------------
+	We use the 'grep' command to search for a particular string/word in a text file. This is similar to 'ctrl + F' in windows when we search a word or sentence in a file. 
+	
+	$ grep options file1.txt --> Returns results for matching string 'options'
+	$ grep -i options file1.txt --> Returns the results for case-insensitive strings 
+	$ grep -n options file1.txt --> Returns the matching strings  along with their line number
+	$ grep -v options file1.txt --> Returns the result of lines not matching the search string 
+	$ grep -c options file1.txt --> Returns the number of lines in which the results matched search string    
 		
 
 	
