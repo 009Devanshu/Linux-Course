@@ -1,0 +1,137 @@
+AGENDA 
+======================
+1) Fundamentals Of Linux
+2) Different Shells in Linux 
+3) Linux Installation Using Virtual Box 
+4) Linux Commands On Ubuntu
+5) Linux Commands For DevOps 
+6) Linux File System Explained 
+7) Package Management in Linux 
+8) Linux Admin - Configuring a DNS Server
+9) Shell Scripting 
+10) Shell Scripting Interview Q & A 
+11) Linux vs Windows 
+12) Linux vs Unix 
+13) Linux Interview Q & A
+
+
+-----------------------------------------------------------------
+1) Fundamentals of Linux 
+Linux is a kernel which is based on Unix. Operating Systems like Ubuntu and Centos are based on Linux and these are Distributions of Linux. 
+Various Linux Distributions
+	The most important distributions are of RED HAT Enterprise Linux(RHEL), Fedora Linux and Debian Linux. Ubuntu is based on Debian. 
+	Linux Features (Compare To Other OS)
+2)Linux Features
+	Simplified Updated for All installed S/W (Using Terminal)
+	Free Software Licensing 
+	Access To Source Code (We can contribute to Source Code of Linux based OS)
+	Multiple Distributes (We can switch to other distributions and these distributions have almost 98% common commands)
+	Better Malware Protection (We don't need antivirus in Linux based operating system)
+
+3) Hands On: Linux Commands 
+Working with Directories
+	<<<<=============================================================================================================>>>>
+	Suppose You want to open root directory
+		cd / -----> open /  (No need to use cd /)
+	Important Commands 	
+		pwd --> Display the current working directory of the terminal 
+		/ --> It indicated the Root directory (Computer) (In Root Directory, there is home directory and inside it there is devanshu directory) (Note: home directory is not Home directory)
+		/& --> It means we are in Root directory
+		~& --> It means we are in Home directory
+		If we are going using terminal in Home directory
+			cd /  (Go to root directory)
+			cd home/devanshu (Now, you are in Home directory)
+			You can do directly -- cd /home/devanshu
+		clear --> It clears the terminal
+		
+		ls --> It lists down all the folders and files present in that directory.
+		ls path--> By specifying the path after ls, the content in that path will be displayed. 
+		ls -l --> Using "l" flag, list all the contents along with its owner settings, permissions and time stamp (long format)
+		   Example--> --> (drwxr-xr-x 2 devanshu devanshu 4096 Dec 19 06:28 Desktop)  <Permission> 2 <username> <hostname> <Memory Size> <Date> <Folder Name> 
+		ls -a --> Using 'a' flag, list all the hidden contents in the specified directory. 
+		ls -author --> Lists the content in the specified directory along with this owner. 
+		ls -S --> Using 'S' flat, Sorts and lists all the content in the specified directory by size. 
+		ls *.html --> Using '*' flat, lists all the content in the directory of a particular format. 
+		ls -IS > file.txt --> Using '>' flag, copies the result of ls command into a text file. 
+			Example --> 
+				$ ls -laS > File1.txt --> It will copy the result (current directory because we did mention directory after ls -laS) of ls -laS into File1.txt (ls -laS will give the output for the current directory and File1.txt is created in current directory)
+				We could run ls -laS for a particular directory althouth your currect directory could be different. File1.txt will be created in current directory.
+					$ ls -laS /home/devanshu > File1.txt
+				We can view the content of a file using cat or vi command--
+					$ cat File2.txt {or}
+					$ vi File2.txt
+						(To exit, :q! or :wq)
+		(Note: We can also combine like --> ls -la, ls -laS)
+		
+		
+		Working with Directories : 'cd'
+		cd --> Changes the directory to Home directory
+		cd ~ --> Changes the directory to Home directory 
+		cd / --> changes the directory to root directory 
+		cd .. --> Changes the directory to its parent directory
+		cd 'xx yy' --> We specify the folder name in inverted commas because there is a space in the folder name
+		
+		 
+		
+		cd --> If you give only cd, it will navigate to Home directory
+		cd .. --> It navigates to the previous directory.
+		cd <DirectoryName>/<DirectoryName> --> You don't need to give full name of directory. You can use tab after writting few letters.
+		echo --> Command that writes its arguments to standard output. (Example -- echo Hi! This is Devanshu)
+			We can print value of a variable using echo-
+				x=100
+				echo $x
+<<<<=======================================================================================================================>>>>
+cat --> This command is used to display the content of text files and concatenate several files into one. 
+grep 
+sort 
+pipe
+
+Working With Files   ($ cat [Options] <file1> <file2>   (Example --> $ cat file1.txt file2.txt)
+-------------------------------------------------------	-------------------------------------------------
+	cat --> This command is used to display the content of text files and concatenate several files into one. 
+	cat -b --> This is used to add line numbers to non-blank lines. 
+	cat -n --> This is used to add line numbers to all lines .
+	cat -s --> This is used to squeeze blank lines into one line. 
+	cat -E --> Show $ at the end of line
+	$ cat > file1.txt --> The '>' flag can be used to create a new file and enter text contents from the terminal. (After entering text, to exit, we press ctrl+D)
+		Now, you can see the content present in file1.txt. --> cat file1.txt
+	$ cat >> file1.txt 								(> is called direction symbol and >> is double direction symbol)
+		the '>>' can be used to append text contents to an existing file from the terminal. 
+	$ cat file1.txt >> file2.txt 
+		the '>>' can be used to append text contents to the existing file file2.txt from the existing file file1.txt.  
+		
+
+	
+
+		
+	cp 
+	mv 
+	mkdir
+	rm 
+	rmdir
+	user permissions
+	
+	Linux Repository 
+	tar files 
+	env var 
+	regex
+	
+	Processes 
+	Adding Users 
+	ssh 
+	
+	su --> Used to switch to root user (so that super user permissions can be used to execute commands)
+	su username --> Used to switch to a different user
+	sudo <command>--> Executes only that command with root/super user privileges
+	
+	whoami --> It tells with which username you are logged in. 
+	sudo passwd root --> It is used to set password for root user. 
+	exit --> To move outside of root user. 
+
+ 
+		
+		
+		
+	
+ 
+	
