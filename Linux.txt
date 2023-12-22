@@ -241,6 +241,24 @@ Working With User Permissions: 'r', 'w', & 'x'
 	
 	
 	We can modify permissions--
+	chmod: To change the access permissions of files  and directories 
+	chown: To change the owner of files and directories 
+	chgrp: To change the group ownership of files and directories 
+	
+	
+	Commands 						Explanation 
+	----------------------------------------------------------------------------------------------------------------------------------------------------
+	chmod g+wx filename					This gives write and execute permission to group members	(+ means you are adding the permissions)
+	
+	chmod u=rwx,o-wx filename				This gives the read, write and execute permission to owners and (= means you are overriding the permissions whatever they had previously)																			
+								removes the write and execute ownership from other members
+	
+	chown username filename					changes the owner of specified file 
+	
+	chown username:groupname filename			changes both the owner and group ownership of the specified file 
+	
+	chgrp groupname filename				Changes the group ownership of the specified file
+	
 	
 	
 	
