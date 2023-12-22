@@ -139,6 +139,33 @@ user permissions
 
 
 
+Working With Files & Directories : 'cp' command  
+--------------------------------------------------------------------------------------------------------
+	$ cp [options] source destination 			([options] is for flag)
+	
+	cp --> This command is used to copy files & directories 		(It will also overwrite)
+	cp -i --> Enters Interactive mode; CLI asks before overwritting files 
+	cp -n --> Do not overwrite the file 
+	cp -u --> Update the destination file only when source file is different from destination file 
+	cp -R --> Recursive copy; copy even hidden files
+	cp -v --> Prints informative messages (It will also overwrite file)
+	
+	Suppose You are in the currenct working directory Desktop, you want to copy file present in Documents.
+		$ cp /home/devanshu/Documents/file.txt .		(dot(.) here represents current working directory)
+	
+
+Working With Files & Directories : 'mv' command  	(mv command is used for cut and paste)
+--------------------------------------------------------------------------------------------------------
+	$ mv [options] source destination 			([options] is for flag)
+	
+	mv --> This command is used to copy files & directories 		(It will also overwrite)
+	mv -i --> Enters Interactive mode; CLI asks before overwritting files 	
+	mv -u --> Update the destination file only when source file is different from destination file 	
+	mv -v --> Prints informative messages (It will also overwrite file)
+	
+	We can move multiple files at the same time
+	mv file1.txt file2.txt LMS/			(It means LMS is in present directory hahahaha!!!!)
+
 	
 	Linux Repository 
 	tar files 
