@@ -209,7 +209,40 @@ Working With Files and Directories : 'rm' and 'rmdir' command
 	
 
 Working With User Permissions: 'r', 'w', & 'x'  
---------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	$ ls -l
+	  d          rwx                  rwx                 r-x                    Symbolic Links	  Owner Name		Group Name	    File Size 		Time Stamp			
+	---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	 File/      User 		  Group  	      Other's 	             1			  devanshu		devanshu	    5223424		Aug 12 2016
+	 Dir        Permissions		  Permissions	      Permissions
+	 type  
+	
+							      (Here in 'r_x', w 
+							      is missing, 
+							      so Other permissions 
+							      are read and 
+							      execute, 
+							      - means that 
+							      thing is missing)
+	Example-->
+	-rw-rw-r--	
+		'-' --> It is a normal file
+		'rw-' --> User has read, write permissions. Not execute permission.
+		'rw-' --> Group Permissions are read and write. Not execute. 
+		'r--' --> Other's permission is read only. w and x are missing. 							      					
+	
+	
+	File Types 			  File Permissions		Denotions
+	----------------------------------------------------------------------------------------------------------
+	Normal File- '-'		  Read- 'r'			Users- 'u'
+	Directory- 'd'                    Write- 'w'			Groups- 'g'
+	Character Special File- 'c'	  Execute- 'x'			Others- 'o'
+	Binary Special File- 'b'					All- 'a'
+	
+	
+	We can modify permissions--
+	
+	
 	
 
 	
