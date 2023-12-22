@@ -260,14 +260,50 @@ Working With User Permissions: 'r', 'w', & 'x'
 	chgrp groupname filename				Changes the group ownership of the specified file
 	
 	
+
+
+
+<<<<<<<<<<<<<<<<<<===============================================================================================================================================>>>>>>>>>>>>>>>>>>>>>>>>
+Linux Repository 
+tar files 
+env var 
+regex
+<<<<<<<<<<<<<<<<<<===============================================================================================================================================>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+Working With Linux Repositories 
+-------------------------------------------------------------------------------------------------------------------------
+	Stable versions of most softwares will already be available in Linux repositories. Command to install them:
+	$ sudo yum install package-name		//For RHEL based systems	(Repository for RHEL repository is yum)
+	$ sudo apt-get install package-name 	//For Debian based systems	(Repository for Debian repository is apt)
+	$ sudo dnf install package-name		//For Fedora based systems	(Repository for Fedora repository is dnf)
 	
+	Java Installation
+	--------------------------------
+	$ sudo apt update
+	$ sudo apt install openjdk-17-jdk	(If will promt to type y or n, if you are sure to install just write -y in this command --> $ sudo apt -y install openjdk-17-jdk) 
+	$ java -version				(Confirm the installation)
+	$ sudo update-alternatives --config java	//For selecting from various java versions
+	$ cd 
+	
+	$ sudo gedit .bashrc			(Using this command, You will enter into bashrc file, and there you can set environment variables (bashrc is present in Home directory))
+	# Set the environment variables here 
+	
+	$ source .bashrc	(It is just to sync your terminal with set environment variables. You can avoid if your opening new terminal)
 	
 
+Working With tar files 
+-------------------------------------------------------------------------------------------------------------------------
+	When you download a package from the internet, the downloaded files comes in compressed form. Commands to decompress and compress files in linux:
 	
-	Linux Repository 
-	tar files 
-	env var 
-	regex
+	gzip: To compress files with .gz format
+	gunzip: To decompress .gz files
+	tar: To compress and decompress files with .tar format
+	
+	$ tar -cvf tar-file-name file-name	//Compressing files to Tar format
+	$ tar -xvf tar-file-name	//Extracting/Decompressing files in Tar format
+	
+	
 	
 	Processes 
 	Adding Users 
