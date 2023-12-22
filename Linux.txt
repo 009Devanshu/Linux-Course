@@ -159,12 +159,58 @@ Working With Files & Directories : 'mv' command  	(mv command is used for cut an
 	$ mv [options] source destination 			([options] is for flag)
 	
 	mv --> This command is used to copy files & directories 		(It will also overwrite)
-	mv -i --> Enters Interactive mode; CLI asks before overwritting files 	
-	mv -u --> Update the destination file only when source file is different from destination file 	
+	mv -i --> Enters Interactive mode; CLI asks before overwritting files 
+	mv -n --> Do not overwrite the file 
+	mv -u --> Update the destination file only when source file is different from destination file 
+	mv -R --> Recursive copy; copy even hidden files
 	mv -v --> Prints informative messages (It will also overwrite file)
 	
 	We can move multiple files at the same time
 	mv file1.txt file2.txt LMS/			(It means LMS is in present directory hahahaha!!!!)
+	
+	What would you do if you need to copy multiple files at the same time 
+	$ cp *.txt /home/devanshu/Desktop	(Same for move command)
+	Another Demo (You are in Pictures folder, you need to copy multiple files from Documents to (current)Pictures folder)
+		$  cp /home/devanshu/Documents/*.txt .		(dot (.) represents current directory)
+	
+	
+	(Note: Shortcut for clearing the screen is --> ctrl + L) 
+	
+
+Working With Directories : 'mkdir' command
+--------------------------------------------------------------------------------------------------------
+	$ mkdir directory-path 
+	
+	mkdir --> This command is used to create new directory 
+	mkdir -p --> Create both a new parent directory and a sub-directory 
+	mkdir --parents --> This is also used for the same process 
+	mkdir {folder1,folder2,folder3} --> To make multiple folders
+	mkdir -p NewFolder/{f2,f3,f4} --> This is used to create multiple sud-directories inside the new parent directory 
+	
+	
+
+Working With Files and Directories : 'rm' and 'rmdir' command
+--------------------------------------------------------------------------------------------------------
+	$ rmdir foldername
+	$ rm filename/foldername
+	
+	rmdir --> This command is used to remove the specified directory (It should not contain subdirectories)
+		rmdir Folder1
+	Suppose Folder1 contains folder2 and folder2 contains contains folder3. To delete, folder3. 
+		rmdir Folder1/folder2/folder3
+	rmdir -p --> Removes both the parent and child directory
+		rmdir -p Folder1/folder2/folder3	(It will delete parent and sub-directories
+		rmdir -p Folder1	(It will not work and says 'directory not empty')
+	rmdir -pv --> Remove all the parent and sub directories along with the verbose
+	rm -r --> Removes even non-empty directories
+		Suppose Folder1 contains folder2 and folder2 contains folder3. 
+		rm -r Folder1	(It will delete Folder1 without any problem)
+	rm -rp --> Removes non empty directories including parent and subdirectories  
+	
+
+Working With User Permissions: 'r', 'w', & 'x'  
+--------------------------------------------------------------------------------------------------------
+	
 
 	
 	Linux Repository 
