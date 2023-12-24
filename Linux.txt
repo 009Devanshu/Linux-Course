@@ -286,7 +286,8 @@ Working With Linux Repositories
 	$ sudo update-alternatives --config java	//For selecting from various java versions
 	$ cd 
 	
-	$ sudo gedit .bashrc			(Using this command, You will enter into bashrc file, and there you can set environment variables (bashrc is present in Home directory))
+	$ sudo gedit .bashrc	(run in home directory)(Using this command, You will enter into bashrc file, and there you can set environment variables (bashrc is present in Home 	  directory))
+	
 	# Set the environment variables here 
 	
 	$ source .bashrc	(It is just to sync your terminal with set environment variables. You can avoid if your opening new terminal)
@@ -301,13 +302,141 @@ Working With tar files
 	tar: To compress and decompress files with .tar format
 	
 	$ tar -cvf tar-file-name file-name	//Compressing files to Tar format
+		$ tar -cvf lms.tar LMS		(lms.tar--> You want to give the name of compressed file, LMS which folder you want to compress)
 	$ tar -xvf tar-file-name	//Extracting/Decompressing files in Tar format
 	
+	(tar is preferred in linux)
+	When you download any file from the internet for your linux. It is downloaded in the form of tar file. 
+	
+
+Working With Environment Variables 
+-------------------------------------------------------------------------------------------------------------------------
+	Environment variables control the behaviour of the software packages installed in Linux.
+	The path where the packages have been installed will be specified in environment variables. 
+	
+	$ printenv //print the list of all environment variables 
+	$ echo $HOME //This will print the path of Home directory of the user. 
+	$ echo $PATH //It is a colon-separated list of directories in which the shell looks for commands
+	$ echo $HOSTNAME //This will print the hostname
+	$ echo $USERNAME //This will print the username
+	$ echo $LANG //This will print the language being used. 
+	$ echo $BASH_VERSION //This will print the version of this instance of bash
+	
+
+Working With Regular Expressions
+-------------------------------------------------------------------------------------------------------------------------
+	Regular Expressions (RegEx) are used to search through data. 
+	It can be piped along with 'grep' command to find patterns of text in the file. 
+	
+	Symbol 				Explanation 
+	---------------------------------------------------------
+	.				Replaces any character 
+	^				Matches the start of the String					Ex--( $ cat Automobiles.txt | grep ^a )
+	$				Matches the end of the String					Ex--( $ cat Automobiles.txt | grep a$ )
+	*				Matched the preceding character zero or more times			Ex--( 
+	?				Matches the preceding character one or more times
+	()				Groups regular expressions
+	\				Represents special characters				
 	
 	
-	Processes 
-	Adding Users 
-	ssh 
+	$ cat File1.txt | grep ^a
+	$ grep 'a[0-9]x' File1.txt		(At the starting should be a, at the end should be x, middle of 'a' and 'x' should be any from 0 to 9)
+	$ cat Automobiles.txt | grep a$		(or 'a$')	(cat will give all the strings to grep and grep will show all strings that end with a)
+	$ cat Automobiles.txt | grep '[xt$]'	(cat will give all the strings to grep and grep will show all the strings that should contain 'x', 't' or '$')
+	$ ls | grep '[xt$]'			(It will give all the files and folders to grep and grep will display all the files that contain 'x', 't' or '$')		
+	$ ls | grep 'le[0-9].txt'
+	
+			
+	
+	$ grep a* Automobiles.txt		(Matches a zero or more time)
+	$ grep [a?] Automobiles.txt		(Matches a one or more time)
+	$ grep ['d.d'] File1.txt
+	
+	$ echo {a..z}
+	$ echo {4..45}
+	$ echo 1{a..z}0
+	
+	Example $ echo a{2..4}p --> a2p a3p a4p
+	
+<<<<<<<<<============================================================================================================================================>>>>>>>>>>>>>>>>>>>>>>>>>
+Processes 
+Adding Users 
+ssh 
+
+
+  Processes
+-----------------------------------------------------------------------------
+	--> An instance of a program is called a process. 
+	--> Any command given to linux kernel starts a new process. 
+	--> There can be multiple processes (instances) of a same program. 
+	To view Processes --> $ top	
+	
+	
+	PID		USER		PR		NI		VRT		RES		SHR		S		%CPU		%MEM		TIME+		COMMAND
+	----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	Process		User		Priority	Niceness	Virtual		Physical	Shared		Status		CPU 		Physical	Total		Command  		
+	ID		Name				Value		Memory		Memory		Memory				Time		Memory 		CPU
+																			Used		Time
+	
+	
+	Priority --> (-20 to +20)
+	NI --> (-20 to +20)
+	Note: Higher the priority value, lower is the NI value.
+	
+	Foreground Processes --> The processes which are running in the shell and user can interact with them. If a particular process is running in the foreground, in that case, I will not be able to 
+	interact with other process.
+	Background Process --> Use will not be able to interact with the procees and the user will be able to run other commands.
+	$ google-chrome	(This process will run in the foreground and I can not interact with other process (I can not write any other command))
+	$ google-chrome	& (This process will run in the background and I will be able to interact with other processes (I can write other commands))
+	$ jobs	(It will show the jobs , + means recently added and - means added previously) 
+	To bring the process in foreground--
+	$ fg %num_of_the_job	or  $ fg google-chrome
+		Now, the process will run in the fore-ground, I want to run it in background, two steps to follow--
+			 --> ctrl + z 		(It will stop the process)
+			 --> bg %num_of_the_job
+			 
+	We have seen top command. Another way To see all the processes that are running--
+		$ ps ux
+	To pid 
+		$ pidof google-chrome	(Not working in my case)
+	To kill the process 
+		$ kill pid	(You can pass multiple pids--> kill pid1 pid2 pid3)
+			 
+
+Adding Users
+-----------------------------------------------------------------------------
+	$ sudo useradd user-name //Adding a new user
+	$ sudo passwd user-name //Setting a password for that user
+	$ sudo userdel user-name //Deleting that user
+	
+	
+	$ sudo groupadd group-name //Adding a new group
+	$ sudo groupdel group-name //Deleting that group
+	$ sudo usermod -g group-name user-name //Adding a user to a primary group	
+	
+
+SSH (Secure Shell) For Remote Machine Access
+--------------------------------------------------------------------------------------------------------------------
+	$ service iptables stop //Drop the IP table 
+	$ sudo chkconfig iptables off //Permanently disables the IP table
+	$ sudo gedit /etc/hosts //Add the below IP addresses in both the master and slave's hosts file
+	
+	master 192.168.56.102
+	slave 192.168.56.103
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	su --> Used to switch to root user (so that super user permissions can be used to execute commands)
 	su username --> Used to switch to a different user
